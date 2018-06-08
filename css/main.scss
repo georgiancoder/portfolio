@@ -1,0 +1,138 @@
+@mixin marginCounter($wrapperWidth, $itemWidth, $count) {
+  margin-right: ($wrapperWidth - ($count * $itemWidth)) / ($count - 1);
+  &:nth-child(#{$count}n + #{$count}) {
+    margin-right: 0;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  list-style-type: none;
+  box-sizing: border-box;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+}
+
+input[type=reset], input[type=submit], input[type=button], button {
+  cursor: pointer;
+  border-radius: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+}
+
+a {
+  transition: 0.3s;
+  color: inherit;
+  font-family: inherit;
+}
+
+body {
+  background-color: #212121;
+  padding: 50px;
+}
+
+div {
+  &.site {
+    width: 100%;
+    height: calc(100vh - 100px);
+    background-color: #f7f7f7;
+    padding: 50px;
+  }
+  & > header {
+    width: 100%;
+    height: 75px;
+    display: flex;
+    flex-wrap: wrap;
+    div {
+      &.lasha {
+        width: 350px;
+        a {
+          color: #333333;
+          font-family: "DIN Next LT Pro";
+          font-size: 17px;
+          font-weight: 500;
+          text-transform: uppercase;
+        }
+      }
+    }
+    nav {
+      width: calc(100% - 350px);
+      ul {
+        display: flex;
+        li {
+          font-family: "DIN Next LT Pro";
+          font-size: 17px;
+          font-weight: 500;
+          text-transform: uppercase;
+          color: #bcbcbc;
+          margin-right: 100px;
+          &.active{
+            color: #333333;
+          }
+          a {
+          }
+        }
+      }
+    }
+  }
+  .container {
+    display: flex;
+    height: calc(100% - 75px);
+    aside {
+      width: 350px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      header {
+        address {
+          dl {
+            dt {
+              color: #333333;
+              font-family: "DIN Next LT Pro";
+              font-size: 15px;
+              font-weight: 400;
+              line-height: 25px;
+              a {
+              }
+            }
+          }
+        }
+        div {
+          &.soc {
+            margin-top: 55px;
+          }
+          a {
+            img{
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+      footer {
+        color: #333333;
+        font-family: "DIN Next LT Pro";
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 25px;
+      }
+    }
+    main {
+      width: calc(100% - 350px);
+      height: 100%;
+      overflow: auto;
+      article {
+      }
+    }
+  }
+
+}
