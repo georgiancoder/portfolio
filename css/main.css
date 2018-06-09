@@ -44,7 +44,26 @@ div > header {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
+  flex-wrap: wrap;
+  position: relative; }
+  div > header::before {
+    content: '';
+    display: block;
+    width: 62px;
+    height: 1px;
+    background-color: #999999;
+    position: absolute;
+    left: -70px;
+    top: 8px; }
+  div > header::after {
+    content: '';
+    display: block;
+    width: 248px;
+    height: 1px;
+    background-color: #999999;
+    position: absolute;
+    right: -75px;
+    top: 8px; }
   div > header div.lasha {
     width: 350px; }
     div > header div.lasha a {
@@ -65,7 +84,8 @@ div > header {
         font-weight: 500;
         text-transform: uppercase;
         color: #bcbcbc;
-        margin-right: 100px; }
+        margin-right: 100px;
+        cursor: pointer; }
         div > header nav ul li.active {
           color: #333333; }
 
@@ -107,3 +127,107 @@ div .container {
     width: calc(100% - 350px);
     height: 100%;
     overflow: auto; }
+    div .container main .categories div {
+      display: none; }
+      div .container main .categories div.show {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+      div .container main .categories div article {
+        overflow: hidden;
+        width: calc(100% / 3 - 40px);
+        position: relative;
+        background-color: #171717;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center; }
+        div .container main .categories div article::before {
+          content: '';
+          background-color: #171717;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0.8;
+          -webkit-transition: 0.3s;
+          -moz-transition: 0.3s;
+          -ms-transition: 0.3s;
+          -o-transition: 0.3s;
+          transition: 0.3s; }
+        div .container main .categories div article:hover::before {
+          opacity: 0.4; }
+        div .container main .categories div article:nth-child(3n + 3) {
+          margin-right: 0px; }
+        div .container main .categories div article .wrap {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+          flex-direction: column;
+          -webkit-box-pack: center;
+          -ms-flex-pack: center;
+          justify-content: center;
+          -webkit-box-align: center;
+          -ms-flex-align: center;
+          align-items: center; }
+          div .container main .categories div article .wrap:hover h2.title {
+            -webkit-transform: translateX(0%);
+            -ms-transform: translateX(0%);
+            transform: translateX(0%); }
+          div .container main .categories div article .wrap:hover button.lightbox {
+            -webkit-transform: translateX(0%) rotate(-360deg);
+            -ms-transform: translateX(0%) rotate(-360deg);
+            transform: translateX(0%) rotate(-360deg); }
+          div .container main .categories div article .wrap h2.title {
+            position: relative;
+            -webkit-transform: translateX(-500px);
+            -ms-transform: translateX(-500px);
+            transform: translateX(-500px);
+            padding: 0 20%;
+            color: #ffffff;
+            font-family: "DIN Next LT Pro";
+            font-size: 17px;
+            font-weight: 500;
+            text-transform: uppercase;
+            text-align: center;
+            -webkit-transition: 0.5s;
+            -o-transition: 0.5s;
+            transition: 0.5s; }
+          div .container main .categories div article .wrap button.lightbox {
+            position: relative;
+            display: block;
+            margin-top: 15px;
+            background-color: transparent;
+            -webkit-transition: 0.8s;
+            -o-transition: 0.8s;
+            transition: 0.8s;
+            -webkit-transform: translateX(500px) rotate(860deg);
+            -ms-transform: translateX(500px) rotate(860deg);
+            transform: translateX(500px) rotate(860deg); }
+            div .container main .categories div article .wrap button.lightbox img {
+              width: 50px; }

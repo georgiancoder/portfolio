@@ -1,10 +1,3 @@
-@mixin marginCounter($wrapperWidth, $itemWidth, $count) {
-  margin-right: ($wrapperWidth - ($count * $itemWidth)) / ($count - 1);
-  &:nth-child(#{$count}n + #{$count}) {
-    margin-right: 0;
-  }
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -52,6 +45,27 @@ div {
     height: 75px;
     display: flex;
     flex-wrap: wrap;
+    position: relative;
+    &::before{
+      content: '';
+      display: block;
+      width: 62px;
+      height: 1px;
+      background-color: #999999;
+      position: absolute;
+      left: -70px;
+      top: 8px;
+    }
+    &::after{
+      content: '';
+      display: block;
+      width: 248px;
+      height: 1px;
+      background-color: #999999;
+      position: absolute;
+      right: -75px;
+      top: 8px;
+    }
     div {
       &.lasha {
         width: 350px;
@@ -75,6 +89,7 @@ div {
           text-transform: uppercase;
           color: #bcbcbc;
           margin-right: 100px;
+          cursor: pointer;
           &.active{
             color: #333333;
           }
@@ -130,7 +145,96 @@ div {
       width: calc(100% - 350px);
       height: 100%;
       overflow: auto;
-      article {
+      .categories{
+        div{
+          display: none;
+
+          &.show{
+            display: flex;
+            flex-wrap: wrap;
+          }
+          article{
+            overflow: hidden;
+            width: calc(100% / 3 - 40px);
+            position: relative;
+            background-color: #171717;
+            margin-right: 20px;
+            margin-bottom: 20px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: top center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &::before{
+              content: '';
+              background-color: #171717;
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              opacity: 0.8;
+              -webkit-transition: 0.3s;
+              -moz-transition: 0.3s;
+              -ms-transition: 0.3s;
+              -o-transition: 0.3s;
+              transition: 0.3s;
+            }
+            &:hover{
+              &::before{
+                opacity: 0.4;
+              }
+            }
+            &:nth-child(3n + 3){
+              margin-right: 0px;
+            }
+            .wrap{
+              width: 100%;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              &:hover{
+                h2.title{
+                  transform: translateX(0%);
+                }
+                button.lightbox{
+                  transform: translateX(0%) rotate(-360deg);
+                }
+              }
+              h2.title{
+                position: relative;
+                transform: translateX(-500px);
+                padding: 0 20%;
+                color: #ffffff;
+                font-family: "DIN Next LT Pro";
+                font-size: 17px;
+                font-weight: 500;
+                text-transform: uppercase;
+                text-align: center;
+                transition: 0.5s;
+              }
+              button.lightbox{
+                position: relative;
+                display: block;
+                margin-top: 15px;
+                background-color: transparent;
+                transition: 0.8s;
+                transform: translateX(500px) rotate(860deg);
+                img{
+                  width: 50px;
+                }
+              }
+            }
+
+          }
+        }
       }
     }
   }
