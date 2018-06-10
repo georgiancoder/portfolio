@@ -27,6 +27,12 @@ a {
   color: inherit;
   font-family: inherit; }
 
+@font-face {
+  font-family: 'DIN Next LT Pro';
+  src: url("../fonts/DINNextLTPro-Medium.woff") format("woff2"), url("../fonts/DINNextLTPro-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+
 body {
   background-color: #212121;
   padding: 50px; }
