@@ -39,7 +39,7 @@ body {
 
 div.site {
   width: 100%;
-  height: calc(100vh - 100px);
+  min-height: calc(100vh - 50px);
   background-color: #f7f7f7;
   padding: 50px; }
   div.site.close {
@@ -102,7 +102,6 @@ div.site {
     height: calc(100% - 75px); }
     div.site .container aside {
       width: 350px;
-      height: 100%;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;

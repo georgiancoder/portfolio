@@ -72,7 +72,7 @@ $().ready(function () {
         $("div.site").removeClass('close');
     });
 
-    $(".categories article").height($("main").height() / 2 - 20);
+    $(".categories article").height($(window).height() / 2 - 120);
 
     function applyGalleryItem(counter) {
         var btn = gallery[counter];

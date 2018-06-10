@@ -43,7 +43,7 @@ body {
 
 div.site {
   width: 100%;
-  height: calc(100vh - 100px);
+  min-height: calc(100vh - 50px);
   background-color: #f7f7f7;
   padding: 50px;
   &.close{
@@ -113,7 +113,6 @@ div.site {
     height: calc(100% - 75px);
     aside {
       width: 350px;
-      height: 100%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
