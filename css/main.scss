@@ -329,8 +329,10 @@ div.lightbox {
     div {
       &.gallerywrapper {
         overflow: auto;
-        background-color: #000000;
         width: 1115px;
+        img{
+          width: 100%;
+        }
       }
     }
   }

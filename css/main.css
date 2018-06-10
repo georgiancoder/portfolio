@@ -310,5 +310,6 @@ div.lightbox {
           margin-left: 50px; }
     div.lightbox section div.gallerywrapper {
       overflow: auto;
-      background-color: #000000;
       width: 1115px; }
+      div.lightbox section div.gallerywrapper img {
+        width: 100%; }
