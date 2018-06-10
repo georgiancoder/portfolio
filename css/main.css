@@ -36,6 +36,8 @@ div.site {
   height: calc(100vh - 100px);
   background-color: #f7f7f7;
   padding: 50px; }
+  div.site.close {
+    display: none; }
   div.site > header {
     width: 100%;
     height: 75px;
@@ -230,5 +232,83 @@ div.site {
               div.site .container main .categories div article .wrap button.lightbox img {
                 width: 50px; }
 
+.contentwrapper {
+  width: 1115px;
+  margin: auto; }
+
 div.lightbox {
-  display: none; }
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: calc(100vw - 100px);
+  height: calc(100vh - 100px);
+  background-color: #f7f7f7;
+  z-index: 10;
+  padding: 50px;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0); }
+  div.lightbox.open {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); }
+  div.lightbox header {
+    position: relative; }
+    div.lightbox header::before {
+      content: '';
+      width: 19.75%;
+      height: 1px;
+      background-color: #999999;
+      display: block;
+      position: absolute;
+      left: -70px;
+      top: 8px; }
+    div.lightbox header div h3 {
+      color: #333333;
+      font-family: "DIN Next LT Pro";
+      font-size: 17px;
+      font-weight: 500;
+      text-transform: uppercase; }
+    div.lightbox header div a {
+      display: block;
+      margin-top: 25px;
+      color: #999999;
+      font-family: "DIN Next LT Pro";
+      font-size: 17px;
+      font-weight: 300; }
+    div.lightbox header div button.close {
+      background-color: transparent;
+      position: absolute;
+      right: 0;
+      top: 0; }
+  div.lightbox section {
+    margin-top: 35px;
+    height: calc(100% - 85px); }
+    div.lightbox section.content {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
+    div.lightbox section .btnwrapper {
+      width: calc((100% - 1115px) / 2);
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; }
+      div.lightbox section .btnwrapper button {
+        background-color: transparent; }
+        div.lightbox section .btnwrapper button.prev {
+          margin-left: -50px; }
+        div.lightbox section .btnwrapper button.next {
+          margin-left: 50px; }
+    div.lightbox section div.gallerywrapper {
+      overflow: auto;
+      background-color: #000000;
+      width: 1115px; }

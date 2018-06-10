@@ -38,6 +38,9 @@ div.site {
   height: calc(100vh - 100px);
   background-color: #f7f7f7;
   padding: 50px;
+  &.close{
+    display: none;
+  }
   & > header {
     width: 100%;
     height: 75px;
@@ -238,22 +241,58 @@ div.site {
   }
 
 }
-
-
+.contentwrapper {
+  width: 1115px;
+  margin: auto;
+}
 div.lightbox {
-  display: none;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: calc(100vw - 100px);
+  height: calc(100vh - 100px);
+  background-color: #f7f7f7;
+  z-index: 10;
+  padding: 50px;
+  transition: 0.5s;
+  transform: scale(0);
+  &.open{
+    transform: scale(1);
+  }
   header {
+    position: relative;
+    &::before{
+      content: '';
+      width: 19.75%;
+      height: 1px;
+      background-color: #999999;
+      display: block;
+      position: absolute;
+      left: -70px;
+      top: 8px;
+    }
     div {
-      &.contentwrapper {
-
-      }
       h3 {
+        color: #333333;
+        font-family: "DIN Next LT Pro";
+        font-size: 17px;
+        font-weight: 500;
+        text-transform: uppercase;
       }
       a {
+        display: block;
+        margin-top: 25px;
+        color: #999999;
+        font-family: "DIN Next LT Pro";
+        font-size: 17px;
+        font-weight: 300;
       }
       button {
         &.close {
-
+          background-color: transparent;
+          position: absolute;
+          right: 0;
+          top: 0;
         }
         &[type=button] {
 
@@ -264,25 +303,34 @@ div.lightbox {
     }
   }
   section {
+    margin-top: 35px;
+    height: calc(100% - 85px);
     &.content {
-
+      display: flex;
     }
-    button {
-      &.prev {
-
-      }
-      &.next {
-
-      }
-      &[type=button] {
-
-      }
-      img {
+    .btnwrapper{
+      width: calc((100% - 1115px) / 2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      button {
+        background-color: transparent;
+        &.prev {
+          margin-left: -50px;
+        }
+        &.next {
+          margin-left: 50px;
+        }
+        img {
+        }
       }
     }
+
     div {
-      &.contentwrapper {
-
+      &.gallerywrapper {
+        overflow: auto;
+        background-color: #000000;
+        width: 1115px;
       }
     }
   }
