@@ -1,6 +1,6 @@
 $().ready(function () {
 
-    var gallery = Array.prototype.slice.call($(".categories .show button.lightbox"));
+    var gallery = Array.prototype.slice.call($(".categories .show article"));
     var lightboxCounter = 0;
 
     $(".navigation li").click(function () {
@@ -14,7 +14,7 @@ $().ready(function () {
             setTimeout(function () {
                 $(".categories > div").removeClass('show animated fadeIn');
                 $(".categories > div").eq(index).addClass('show animated fadeIn');
-                gallery = Array.prototype.slice.call($(".categories .show button.lightbox"));
+                gallery = Array.prototype.slice.call($(".categories .show article"));
             }, 500);
         }
     });
@@ -31,7 +31,7 @@ $().ready(function () {
         $("div.site").removeClass('close');
     });
 
-    $("button.lightbox").click(function (event) {
+    $("article").click(function (event) {
         event.stopPropagation();
         event.stopImmediatePropagation();
 

@@ -36,56 +36,52 @@ a {
 body {
   background-color: #212121;
   padding: 25px; }
-
-div.site {
-  width: 100%;
-  min-height: calc(100vh - 50px);
-  background-color: #f7f7f7;
-  padding: 50px; }
-  div.site.close {
-    display: none; }
-  div.site > header {
+  body > header {
+    position: fixed;
+    z-index: 9;
+    top: 25px;
+    background-color: #f7f7f7;
     width: 100%;
-    height: 75px;
+    height: 135px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    position: relative; }
-    div.site > header::before {
+    padding: 50px 50px 0px 50px; }
+    body > header::before {
       content: '';
       display: block;
       width: 62px;
       height: 1px;
       background-color: #999999;
       position: absolute;
-      left: -70px;
-      top: 8px; }
-    div.site > header::after {
+      left: -20px;
+      top: 58px; }
+    body > header::after {
       content: '';
       display: block;
       width: 14%;
       height: 1px;
       background-color: #999999;
       position: absolute;
-      right: -75px;
-      top: 8px; }
-    div.site > header div.lasha {
+      right: -25px;
+      top: 58px; }
+    body > header div.lasha {
       width: 350px; }
-      div.site > header div.lasha a {
+      body > header div.lasha a {
         color: #333333;
         font-family: "DIN Next LT Pro";
         font-size: 17px;
         font-weight: 500;
         text-transform: uppercase; }
-    div.site > header nav {
+    body > header nav {
       width: calc(100% - 350px); }
-      div.site > header nav ul {
+      body > header nav ul {
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex; }
-        div.site > header nav ul li {
+        body > header nav ul li {
           font-family: "DIN Next LT Pro";
           font-size: 17px;
           font-weight: 500;
@@ -93,8 +89,15 @@ div.site {
           color: #bcbcbc;
           margin-right: 100px;
           cursor: pointer; }
-          div.site > header nav ul li.active {
+          body > header nav ul li.active {
             color: #333333; }
+
+div.site {
+  width: 100%;
+  min-height: calc(100vh - 50px);
+  background-color: #f7f7f7; }
+  div.site.close {
+    display: none; }
   div.site .container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -162,7 +165,8 @@ div.site {
           justify-content: center;
           -webkit-box-align: center;
           -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+          cursor: pointer; }
           div.site .container main .categories div article::before {
             content: '';
             background-color: #171717;
@@ -171,7 +175,7 @@ div.site {
             position: absolute;
             top: 0;
             left: 0;
-            opacity: 0.8;
+            opacity: 0;
             -webkit-transition: 0.3s;
             -moz-transition: 0.3s;
             -ms-transition: 0.3s;
@@ -204,10 +208,11 @@ div.site {
               -webkit-transform: translateX(0%);
               -ms-transform: translateX(0%);
               transform: translateX(0%); }
-            div.site .container main .categories div article .wrap:hover button.lightbox {
-              -webkit-transform: translateX(0%) rotate(-360deg);
-              -ms-transform: translateX(0%) rotate(-360deg);
-              transform: translateX(0%) rotate(-360deg); }
+            div.site .container main .categories div article .wrap:hover img {
+              -webkit-transform: translateY(0);
+              -ms-transform: translateY(0);
+              transform: translateY(0);
+              opacity: 1; }
             div.site .container main .categories div article .wrap h2.title {
               position: relative;
               -webkit-transform: translateX(-500px);
@@ -223,7 +228,7 @@ div.site {
               -webkit-transition: 0.5s;
               -o-transition: 0.5s;
               transition: 0.5s; }
-            div.site .container main .categories div article .wrap button.lightbox {
+            div.site .container main .categories div article .wrap img {
               position: relative;
               display: block;
               margin-top: 15px;
@@ -231,11 +236,10 @@ div.site {
               -webkit-transition: 0.8s;
               -o-transition: 0.8s;
               transition: 0.8s;
-              -webkit-transform: translateX(500px) rotate(860deg);
-              -ms-transform: translateX(500px) rotate(860deg);
-              transform: translateX(500px) rotate(860deg); }
-              div.site .container main .categories div article .wrap button.lightbox img {
-                width: 50px; }
+              opacity: 0;
+              -webkit-transform: translateY(300%);
+              -ms-transform: translateY(300%);
+              transform: translateY(300%); }
 
 .contentwrapper {
   width: 1115px;
