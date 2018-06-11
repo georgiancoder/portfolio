@@ -39,12 +39,33 @@ a {
 body {
   background-color: #212121;
   padding: 25px;
+  &::before{
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #212121;
+    width: 100%;
+    height: 25px;
+    z-index: 9;
+  }
+  &::after{
+    content: '';
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    background-color: #212121;
+  }
   & > header {
     position: fixed;
     z-index: 9;
     top: 25px;
     background-color: #f7f7f7;
-    width: 100%;
+    width: calc(100% - 50px);
     height: 135px;
     display: flex;
     flex-wrap: wrap;
@@ -71,7 +92,7 @@ body {
     }
     div {
       &.lasha {
-        width: 350px;
+        width: 300px;
         a {
           color: #333333;
           font-family: "DIN Next LT Pro";
@@ -102,60 +123,78 @@ body {
       }
     }
   }
+  & > aside {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: calc(100vh - 185px);
+    background-color: #f7f7f7;
+    position: fixed;
+    top: 160px;
+    left: 25px;
+    z-index: 9;
+    padding-left: 50px;
+    padding-bottom: 50px;
+    header {
+      address {
+        dl {
+          dt {
+            color: #333333;
+            font-family: "DIN Next LT Pro";
+            font-size: 15px;
+            font-weight: 400;
+            line-height: 25px;
+            a {
+            }
+          }
+        }
+      }
+      div {
+        &.soc {
+          margin-top: 55px;
+        }
+        a {
+          img {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+    footer {
+      color: #333333;
+      font-family: "DIN Next LT Pro";
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 25px;
+    }
+  }
 }
 
 div.site {
   width: 100%;
   min-height: calc(100vh - 50px);
   background-color: #f7f7f7;
+  position: relative;
   &.close {
     display: none;
   }
-
+  &::after{
+    content: '';
+    display: block;
+    width: calc(100% - 50px);
+    height: 50px;
+    position: fixed;
+    left: 25px;
+    bottom: 25px;
+    background-color: #f7f7f7;
+    z-index: 9;
+  }
   .container {
-    display: flex;
-    height: calc(100% - 75px);
-    aside {
-      width: 350px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      header {
-        address {
-          dl {
-            dt {
-              color: #333333;
-              font-family: "DIN Next LT Pro";
-              font-size: 15px;
-              font-weight: 400;
-              line-height: 25px;
-              a {
-              }
-            }
-          }
-        }
-        div {
-          &.soc {
-            margin-top: 55px;
-          }
-          a {
-            img {
-              margin-right: 10px;
-            }
-          }
-        }
-      }
-      footer {
-        color: #333333;
-        font-family: "DIN Next LT Pro";
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 25px;
-      }
-    }
     main {
       width: calc(100% - 350px);
-      height: 100%;
+      margin-left: 350px;
+      margin-top: 135px;
       overflow: auto;
       .categories {
         div {
@@ -260,10 +299,10 @@ div.site {
 
 div.lightbox {
   position: absolute;
-  top: 50px;
-  left: 50px;
-  width: calc(100vw - 100px);
-  height: calc(100vh - 100px);
+  top: 25px;
+  left: 25px;
+  width: calc(100vw - 50px);
+  height: calc(100vh - 50px);
   background-color: #f7f7f7;
   z-index: 10;
   padding: 50px;

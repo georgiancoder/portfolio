@@ -36,12 +36,31 @@ a {
 body {
   background-color: #212121;
   padding: 25px; }
+  body::before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #212121;
+    width: 100%;
+    height: 25px;
+    z-index: 9; }
+  body::after {
+    content: '';
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 25px;
+    background-color: #212121; }
   body > header {
     position: fixed;
     z-index: 9;
     top: 25px;
     background-color: #f7f7f7;
-    width: 100%;
+    width: calc(100% - 50px);
     height: 135px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -68,7 +87,7 @@ body {
       right: -25px;
       top: 58px; }
     body > header div.lasha {
-      width: 350px; }
+      width: 300px; }
       body > header div.lasha a {
         color: #333333;
         font-family: "DIN Next LT Pro";
@@ -91,68 +110,121 @@ body {
           cursor: pointer; }
           body > header nav ul li.active {
             color: #333333; }
+  body > aside {
+    width: 350px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    height: calc(100vh - 185px);
+    background-color: #f7f7f7;
+    position: fixed;
+    top: 160px;
+    left: 25px;
+    z-index: 9;
+    padding-left: 50px;
+    padding-bottom: 50px; }
+    body > aside header address dl dt {
+      color: #333333;
+      font-family: "DIN Next LT Pro";
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 25px; }
+    body > aside header div.soc {
+      margin-top: 55px; }
+    body > aside header div a img {
+      margin-right: 10px; }
+    body > aside footer {
+      color: #333333;
+      font-family: "DIN Next LT Pro";
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 25px; }
 
 div.site {
   width: 100%;
   min-height: calc(100vh - 50px);
-  background-color: #f7f7f7; }
+  background-color: #f7f7f7;
+  position: relative; }
   div.site.close {
     display: none; }
-  div.site .container {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    height: calc(100% - 75px); }
-    div.site .container aside {
-      width: 350px;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-      justify-content: space-between; }
-      div.site .container aside header address dl dt {
-        color: #333333;
-        font-family: "DIN Next LT Pro";
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 25px; }
-      div.site .container aside header div.soc {
-        margin-top: 55px; }
-      div.site .container aside header div a img {
-        margin-right: 10px; }
-      div.site .container aside footer {
-        color: #333333;
-        font-family: "DIN Next LT Pro";
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 25px; }
-    div.site .container main {
-      width: calc(100% - 350px);
-      height: 100%;
-      overflow: auto; }
-      div.site .container main .categories div {
-        display: none; }
-        div.site .container main .categories div.show {
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: flex;
-          -ms-flex-wrap: wrap;
-          flex-wrap: wrap; }
-        div.site .container main .categories div article {
-          overflow: hidden;
-          width: calc(100% / 3 - 40px);
-          position: relative;
+  div.site::after {
+    content: '';
+    display: block;
+    width: calc(100% - 50px);
+    height: 50px;
+    position: fixed;
+    left: 25px;
+    bottom: 25px;
+    background-color: #f7f7f7;
+    z-index: 9; }
+  div.site .container main {
+    width: calc(100% - 350px);
+    margin-left: 350px;
+    margin-top: 135px;
+    overflow: auto; }
+    div.site .container main .categories div {
+      display: none; }
+      div.site .container main .categories div.show {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+      div.site .container main .categories div article {
+        overflow: hidden;
+        width: calc(100% / 3 - 40px);
+        position: relative;
+        background-color: #171717;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        cursor: pointer; }
+        div.site .container main .categories div article::before {
+          content: '';
           background-color: #171717;
-          margin-right: 20px;
-          margin-bottom: 20px;
-          background-repeat: no-repeat;
-          background-size: cover;
-          background-position: top center;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          -webkit-transition: 0.3s;
+          -moz-transition: 0.3s;
+          -ms-transition: 0.3s;
+          -o-transition: 0.3s;
+          transition: 0.3s; }
+        div.site .container main .categories div article:hover::before {
+          opacity: 0.4; }
+        div.site .container main .categories div article:nth-child(3n + 3) {
+          margin-right: 0px; }
+        div.site .container main .categories div article .wrap {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
@@ -165,81 +237,43 @@ div.site {
           justify-content: center;
           -webkit-box-align: center;
           -ms-flex-align: center;
-          align-items: center;
-          cursor: pointer; }
-          div.site .container main .categories div article::before {
-            content: '';
-            background-color: #171717;
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
+          align-items: center; }
+          div.site .container main .categories div article .wrap:hover h2.title {
+            -webkit-transform: translateX(0%);
+            -ms-transform: translateX(0%);
+            transform: translateX(0%); }
+          div.site .container main .categories div article .wrap:hover img {
+            -webkit-transform: translateY(0);
+            -ms-transform: translateY(0);
+            transform: translateY(0);
+            opacity: 1; }
+          div.site .container main .categories div article .wrap h2.title {
+            position: relative;
+            -webkit-transform: translateX(-500px);
+            -ms-transform: translateX(-500px);
+            transform: translateX(-500px);
+            padding: 0 20%;
+            color: #ffffff;
+            font-family: "DIN Next LT Pro";
+            font-size: 17px;
+            font-weight: 500;
+            text-transform: uppercase;
+            text-align: center;
+            -webkit-transition: 0.5s;
+            -o-transition: 0.5s;
+            transition: 0.5s; }
+          div.site .container main .categories div article .wrap img {
+            position: relative;
+            display: block;
+            margin-top: 15px;
+            background-color: transparent;
+            -webkit-transition: 0.8s;
+            -o-transition: 0.8s;
+            transition: 0.8s;
             opacity: 0;
-            -webkit-transition: 0.3s;
-            -moz-transition: 0.3s;
-            -ms-transition: 0.3s;
-            -o-transition: 0.3s;
-            transition: 0.3s; }
-          div.site .container main .categories div article:hover::before {
-            opacity: 0.4; }
-          div.site .container main .categories div article:nth-child(3n + 3) {
-            margin-right: 0px; }
-          div.site .container main .categories div article .wrap {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            -webkit-box-orient: vertical;
-            -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-            flex-direction: column;
-            -webkit-box-pack: center;
-            -ms-flex-pack: center;
-            justify-content: center;
-            -webkit-box-align: center;
-            -ms-flex-align: center;
-            align-items: center; }
-            div.site .container main .categories div article .wrap:hover h2.title {
-              -webkit-transform: translateX(0%);
-              -ms-transform: translateX(0%);
-              transform: translateX(0%); }
-            div.site .container main .categories div article .wrap:hover img {
-              -webkit-transform: translateY(0);
-              -ms-transform: translateY(0);
-              transform: translateY(0);
-              opacity: 1; }
-            div.site .container main .categories div article .wrap h2.title {
-              position: relative;
-              -webkit-transform: translateX(-500px);
-              -ms-transform: translateX(-500px);
-              transform: translateX(-500px);
-              padding: 0 20%;
-              color: #ffffff;
-              font-family: "DIN Next LT Pro";
-              font-size: 17px;
-              font-weight: 500;
-              text-transform: uppercase;
-              text-align: center;
-              -webkit-transition: 0.5s;
-              -o-transition: 0.5s;
-              transition: 0.5s; }
-            div.site .container main .categories div article .wrap img {
-              position: relative;
-              display: block;
-              margin-top: 15px;
-              background-color: transparent;
-              -webkit-transition: 0.8s;
-              -o-transition: 0.8s;
-              transition: 0.8s;
-              opacity: 0;
-              -webkit-transform: translateY(300%);
-              -ms-transform: translateY(300%);
-              transform: translateY(300%); }
+            -webkit-transform: translateY(300%);
+            -ms-transform: translateY(300%);
+            transform: translateY(300%); }
 
 .contentwrapper {
   width: 1115px;
@@ -247,10 +281,10 @@ div.site {
 
 div.lightbox {
   position: absolute;
-  top: 50px;
-  left: 50px;
-  width: calc(100vw - 100px);
-  height: calc(100vh - 100px);
+  top: 25px;
+  left: 25px;
+  width: calc(100vw - 50px);
+  height: calc(100vh - 50px);
   background-color: #f7f7f7;
   z-index: 10;
   padding: 50px;
