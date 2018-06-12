@@ -28,7 +28,7 @@ $().ready(function () {
         event.stopPropagation();
         event.stopImmediatePropagation();
         $("div.lightbox").removeClass('open');
-        $("div.site").removeClass('close');
+        $("body").removeClass('close');
     });
 
     $("article").click(function (event) {
@@ -39,7 +39,7 @@ $().ready(function () {
         lightboxCounter = index;
         applyGalleryItem(lightboxCounter);
         $(".lightbox").addClass('open');
-        $(".site").addClass('close');
+        $("body").addClass('close');
     });
 
     $("div.lightbox button.prev").click(function (event) {
@@ -69,7 +69,7 @@ $().ready(function () {
         event.stopPropagation();
         event.stopImmediatePropagation();
         $("div.lightbox").removeClass('open');
-        $("div.site").removeClass('close');
+        $("body").removeClass('close');
     });
 
     $(".categories article").height($(window).height() / 2 - 120);
