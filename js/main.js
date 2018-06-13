@@ -29,6 +29,7 @@ $().ready(function () {
         event.stopImmediatePropagation();
         $("div.lightbox").removeClass('open');
         $("body").removeClass('close');
+        $(".lightbox header").removeClass('line');
     });
 
     $("article").click(function (event) {
@@ -40,6 +41,9 @@ $().ready(function () {
         applyGalleryItem(lightboxCounter);
         $(".lightbox").addClass('open');
         $("body").addClass('close');
+        setTimeout(function () {
+            $(".lightbox header").addClass('line');
+        },300);
     });
 
     $("div.lightbox button.prev").click(function (event) {
@@ -70,6 +74,7 @@ $().ready(function () {
         event.stopImmediatePropagation();
         $("div.lightbox").removeClass('open');
         $("body").removeClass('close');
+        $(".lightbox header").removeClass('line');
     });
 
     $(".categories article").height($(window).height() / 2 - 120);

@@ -309,16 +309,15 @@ div.site {
 }
 
 div.lightbox {
-  width: calc(100vw - 50px);
+  width: 100%;
+  min-height: 100vh;
   background-color: #f7f7f7;
-  z-index: 10;
-  transition: 0.5s;
-  transform: scale(0);
+  display: none;
   &.open {
-    transform: initial;
+    display: block;
     header{
       &::before{
-        width: 19.75%;
+        //width: 19.75%;
       }
     }
   }
@@ -330,6 +329,11 @@ div.lightbox {
     width: calc(100% - 50px);
     height: 135px;
     padding-top: 50px;
+    &.line{
+      &::before{
+        width: 19%;
+      }
+    }
     &::before {
       content: '';
       width: 0;
@@ -377,19 +381,28 @@ div.lightbox {
     min-height: calc(100% - 85px);
     &.content {
       display: flex;
+      justify-content: center;
     }
     .btnwrapper {
-      width: calc((100% - 1115px) / 2);
+      width: calc((100% - 1167px) / 2);
+      height: calc(100vh - 185px);
+      position: fixed;
+      top: 135px;
       display: flex;
       align-items: center;
       justify-content: center;
+      &:first-child{
+        left: 25px;
+      }
+      &:last-child{
+        right: 25px;
+      }
       button {
         background-color: transparent;
         &.prev {
-          margin-left: -50px;
+
         }
         &.next {
-          margin-left: 50px;
         }
         img {
         }
