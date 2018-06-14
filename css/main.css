@@ -105,7 +105,8 @@ body {
         font-family: "DIN Next LT Pro";
         font-size: 17px;
         font-weight: 500;
-        text-transform: uppercase; }
+        text-transform: uppercase;
+        display: block; }
     body > header nav {
       width: calc(100% - 350px); }
       body > header nav ul {
