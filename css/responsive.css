@@ -1,3 +1,15 @@
+@media (max-width: 1370px) {
+    div.lightbox section div.gallerywrapper{
+        width: 90%;
+    }
+    div.lightbox section .btnwrapper{
+        width: 5%;
+    }
+    .contentwrapper{
+        width: 90%;
+    }
+}
+
 @media (max-width: 1270px) {
     body > aside{
         width: 250px;
@@ -54,7 +66,156 @@
     body > header nav{
         width: calc(100% - 175px);
     }
+    div.lightbox section div.gallerywrapper{
+        width: 80%;
+    }
+    div.lightbox section .btnwrapper{
+        width: 10%;
+    }
+    .contentwrapper{
+        width: 80%;
+    }
 }
+
+
+@media (max-width: 870px) {
+    body > aside{
+        width: 100%;
+        height: calc(100vh - 65px);
+        left: 0;
+        top: 65px;
+        padding: 0;
+        padding-top: 90px;
+        align-items: center;
+        background-color: #0a0d0d;
+    }
+    body > aside header::before{
+        content: 'CONTACT';
+        display: block;
+        color: #999999;
+        font-family: "DIN Next LT Pro";
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 43px;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    body > aside header address{
+        margin-top: 10px;
+    }
+    body > aside header address dl dt{
+        font-family: "DIN Next LT Pro";
+        font-size: 20px;
+        font-weight: 400;
+        line-height: 43px;
+        color: #ffffff;
+        text-align: center;
+    }
+    body > aside .soc{
+        display: none;
+    }
+    body > aside header div.soc2{
+        margin-top: 55px;
+        display: block;
+    }
+    body > aside header div.soc2 a img{
+        margin: 0 10px;
+    }
+    body > aside footer{
+        display: none;
+    }
+    body::before{
+        display: none;
+    }
+    body::after{
+        display: none;
+    }
+    body{
+        padding: 0;
+        background-color: #ffffff;
+    }
+    body > header{
+        position: static;
+        padding: 0;
+        height: auto;
+        background-color: transparent;
+    }
+    body > header::before{
+        display: none;
+    }
+    body > header::after{
+        display: none;
+    }
+    body > header div.lasha{
+        width: 100%;
+        height: 65px;
+        background-color: #131718;
+        padding: 0 20px;
+        padding-right: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    body > header div.lasha a{
+        color: #ffffff;
+        font-size: 17px;
+        font-weight: 500;
+        text-transform: uppercase;
+    }
+    .burger{
+        display: block;
+        background-color: transparent;
+    }
+    body > header nav{
+        position: fixed;
+        width: 100%;
+        height: 57px;
+        z-index: 2;
+        top: 65px;
+        left: 0;
+        background-color: #f8fbfb;
+        overflow: auto;
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+    }
+    body > header nav ul{
+        min-width: 650px;
+    }
+    body > header nav ul li{
+        font-size: 17px;
+    }
+    div.site .container main{
+        margin: 0;
+        width: 100%;
+        padding: 20px;
+    }
+    div.site .container main .categories div article{
+        width: calc(100% / 2 - 10px);
+    }
+    div.site{
+        background-color: #ffffff;
+    }
+    div.site::after{
+        display: none;
+    }
+    div.site .container main{
+        margin-top: 122px;
+    }
+}
+
+@media (max-width: 580px) {
+    div.site .container main .categories div article{
+        width: 100%;
+        height: 270px;
+        margin-right: 0!important;
+    }
+}
+
 
 @keyframes xazi1 {
     0%{

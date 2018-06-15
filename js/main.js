@@ -76,8 +76,9 @@ $().ready(function () {
         $("body").removeClass('close');
         $(".lightbox header").removeClass('line');
     });
-
-    $(".categories article").height($(window).height() / 2 - 120);
+    if($(window).innerWidth()>580){
+        $(".categories article").height($(window).height() / 2 - 120);
+    }
 
     function applyGalleryItem(counter) {
         var btn = gallery[counter];

@@ -33,6 +33,11 @@ a {
   font-weight: 500;
   font-style: normal; }
 
+.burger {
+  display: none;
+  width: 65px;
+  height: 65px; }
+
 body {
   background-color: #212121;
   padding: 25px; }
@@ -151,6 +156,8 @@ body {
       line-height: 25px; }
     body > aside header div.soc {
       margin-top: 55px; }
+    body > aside header div.soc2 {
+      display: none; }
     body > aside header div a img {
       margin-right: 10px; }
     body > aside footer {
@@ -306,7 +313,7 @@ div.lightbox {
     height: 135px;
     padding-top: 50px; }
     div.lightbox header.line::before {
-      width: 19%; }
+      width: calc((100% - 1167px) / 2 + 75px); }
     div.lightbox header::before {
       content: '';
       width: 0;

@@ -36,6 +36,12 @@ a {
   font-style: normal;
 }
 
+.burger{
+  display: none;
+  width: 65px;
+  height: 65px;
+}
+
 body {
   background-color: #212121;
   padding: 25px;
@@ -168,6 +174,9 @@ body {
       div {
         &.soc {
           margin-top: 55px;
+        }
+        &.soc2{
+          display: none;
         }
         a {
           img {
@@ -332,7 +341,7 @@ div.lightbox {
     padding-top: 50px;
     &.line{
       &::before{
-        width: 19%;
+        width: calc((100% - 1167px) / 2 + 75px);
       }
     }
     &::before {
