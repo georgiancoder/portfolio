@@ -124,4 +124,29 @@ $().ready(function () {
         $("div.lightbox .gallerywrapper").html("<img src='" + image + "' alt='gallery img'>");
     }
 
+    var gallerywrapper = document.getElementById("gallerywrapper");
+    var mc = new Hammer(gallerywrapper);
+    mc.get('swipe').set({
+        direction: Hammer.DIRECTION_ALL,
+        threshold: 1,
+        velocity:0.1
+    });
+
+    mc.on("swipeleft swiperight tap press", function(ev) {
+        if(ev.type == 'swipeleft'){
+            if (lightboxCounter == 0) {
+                lightboxCounter = gallery.length - 1;
+            } else {
+                lightboxCounter--;
+            }
+            applyGalleryItem(lightboxCounter);
+        }else if(ev.type == 'swiperight'){
+            if (lightboxCounter == (gallery.length - 1)) {
+                lightboxCounter = 0;
+            } else {
+                lightboxCounter++;
+            }
+            applyGalleryItem(lightboxCounter);
+        }
+    });
 });
