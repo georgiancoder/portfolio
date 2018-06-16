@@ -125,7 +125,7 @@ $().ready(function () {
     }
 
     var gallerywrapper = document.getElementById("gallerywrapper");
-    var mc = new Hammer(gallerywrapper);
+    var mc = new Hammer(gallerywrapper,{touchAction: 'pan-y'});
     mc.get('swipe').set({
         direction: Hammer.DIRECTION_ALL,
         threshold: 1,
@@ -147,6 +147,8 @@ $().ready(function () {
                 lightboxCounter++;
             }
             applyGalleryItem(lightboxCounter);
+        } else {
+            ev.preventDefault();
         }
     });
 });
