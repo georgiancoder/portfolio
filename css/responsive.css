@@ -219,12 +219,17 @@
 
     div.lightbox{
         width: 100%;
-        height: calc(100vh - 65px);
+        height: calc(100% - 65px);
+        overflow: auto;
         position: fixed;
         top: 65px;
         left: 0px;
         z-index: 3;
         background-color: #e6edec;
+        min-height: initial;
+    }
+    div.lightbox section{
+        min-height: initial;
     }
     div.lightbox header{
         position: static;

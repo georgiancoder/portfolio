@@ -76,9 +76,6 @@ $().ready(function () {
             lightboxCounter = index;
             applyGalleryItem(lightboxCounter);
             $(".lightbox").addClass('open');
-            setTimeout(function () {
-                $(".lightbox header").addClass('line');
-            },300);
         });
     } else {
         $("article").click(function (event) {
@@ -102,6 +99,9 @@ $().ready(function () {
         if ($(this).hasClass('open') && $(this).data('role') == 'contact') {
             $(this).removeClass('open').data('role', '');
             $("body > aside").removeClass('open');
+        } else if($(this).hasClass('open') && $(this).data('role') == 'lightbox'){
+            $(this).removeClass('open').data('role', '');
+            $(".lightbox").removeClass('open');
         } else {
             $(this).data('role', 'contact').addClass('open');
             $("body > aside").addClass('open');
